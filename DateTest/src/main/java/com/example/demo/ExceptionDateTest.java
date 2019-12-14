@@ -9,8 +9,8 @@ public class ExceptionDateTest {
 
 	public static void main(String[] args) 
 	{
-		String str = "10/21/2019";
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		String str = "12/03/2019";
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 		LocalDate passedDate = LocalDate.parse(str, formatter);
 		LocalDate currentDate = LocalDate.now();
 		Period diff = Period.between(passedDate, currentDate);

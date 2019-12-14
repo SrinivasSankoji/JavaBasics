@@ -2,7 +2,6 @@ package com.jio.ngo.configuration;
 
 import java.util.Properties;
 
-import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
