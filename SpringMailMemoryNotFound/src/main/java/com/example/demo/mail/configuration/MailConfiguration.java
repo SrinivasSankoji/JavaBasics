@@ -29,4 +29,14 @@ public class MailConfiguration
         emailTemplateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
         return emailTemplateResolver;
     }
+    
+    /**@Bean
+    public ClassLoaderTemplateResolver htmlTemplateResolver(){
+        ClassLoaderTemplateResolver emailTemplateResolver = new ClassLoaderTemplateResolver();
+        emailTemplateResolver.setPrefix("/templates/");
+        emailTemplateResolver.setSuffix(".html");
+        emailTemplateResolver.setTemplateMode(TemplateMode.HTML5);
+        emailTemplateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
+        return emailTemplateResolver;
+    }**/
 }
