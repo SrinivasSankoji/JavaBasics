@@ -2,8 +2,11 @@ package com.example.demo.mail.service;
 
 import java.nio.charset.StandardCharsets;
 
+import javax.mail.Address;
 import javax.mail.MessagingException;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMessage.RecipientType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -38,7 +41,16 @@ public class MailServiceImpl implements MailService
         context.setVariables(mail.getModel());
         String html = templateEngine.process("email-template", context);
 
-        helper.setTo(mail.getTo());
+        String[] strArray = { "How@gmail.com", "To@gmail.com", "Do@gmail.com", "In@gmail.com", "Java@gmail.com" };
+        /**Address[] ia = new InternetAddress[strArray.length];
+        int i = 0;
+        for (String address : strArray) {
+            ia[i] = new InternetAddress(address);
+            i++;
+        }
+        message.addRecipients(RecipientType.TO, ia);**/
+        
+        helper.setTo(strArray);
         helper.setText(html, true);
         helper.setSubject(mail.getSubject());
         helper.setFrom(mail.getFrom());
