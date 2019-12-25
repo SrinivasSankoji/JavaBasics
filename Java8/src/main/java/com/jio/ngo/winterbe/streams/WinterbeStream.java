@@ -1,4 +1,4 @@
-package com.jio.ngo.winterbe;
+package com.jio.ngo.winterbe.streams;
 
 import java.util.Arrays;
 import java.util.List;
