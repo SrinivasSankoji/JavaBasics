@@ -1,11 +1,10 @@
-package com.jio.ngo.javabrains.model;
+package com.jio.ngo.javabrains.exercise;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-import com.jio.ngo.javabrains.exercise.Condition;
+import com.jio.ngo.javabrains.model.Person;
 
 public class LambdaExerciseJava8 {
 
