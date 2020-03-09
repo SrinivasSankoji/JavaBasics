@@ -3,11 +3,12 @@ package com.jio.ngo.javabrains.exercise;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import com.jio.ngo.javabrains.model.Person;
 
-public class LambdaExerciseJava8 {
+public class LambdaExerciseFunction {
 
 	public static void main(String[] args) 
 	{
@@ -23,18 +24,18 @@ public class LambdaExerciseJava8 {
 		Collections.sort(people,(p1,p2) -> p1.getLastName().compareTo(p2.getLastName()));
 		
 		//Print all the Elements of the List Using Pass by Behavior
-		printConditionally(people,p -> true);
+		performConditionally(people,p -> true ,p -> System.out.println(p));
 		
 		//Display Last Name that Begins with C Using Pass by Behavior
-		printConditionally(people, p -> p.getLastName().startsWith("C"));
+		performConditionally(people, p -> p.getLastName().startsWith("C"),p -> System.out.println(p.getLastName()));
 		
 	}
 	
-	private static void printConditionally(List<Person> people,Predicate<Person> predicate) 
+	private static void performConditionally(List<Person> people,Predicate<Person> predicate,Consumer<Person> consumer) 
 	{
 		for (Person person : people) {
 			if(predicate.test(person)) {
-			System.out.println(person);
+				consumer.accept(person);
 			}
 		}
 	}
