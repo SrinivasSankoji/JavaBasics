@@ -8,9 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 /**
@@ -18,45 +25,51 @@ import lombok.Data;
  * For the user database table.
  */
 @Entity
-@Table(name = "USER")
+@Table(name="USERS",schema = "yemen")
 @Data
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable 
 {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="USER_ID")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USER_SEQ")
+    @SequenceGenerator(sequenceName = "USER_ID_SEQ", allocationSize = 1, name = "USER_SEQ")
+	@Column(name="\"USER_ID\"")
 	private Long userId;
 	
-	@Column(name="USER_NAME")
+	@Column(name="\"USER_NAME\"")
 	private String userName;
 	
-	@Column(name="FIRST_NAME")
+	@Column(name="\"FIRST_NAME\"")
 	private String firstName;
 	
-	@Column(name="LAST_NAME")
+	@Column(name="\"LAST_NAME\"")
 	private String lastName;
 	
-	@Column(name="PASSWORD")
+	@Column(name="\"PASSWORD\"")
 	private String password;
 	
-	@Column(name="EMAIL")
+	@Column(name="\"EMAIL\"")
 	private String email;
 	
-	@Column(name="IS_ACTIVE")
+	@Column(name="\"IS_ACTIVE\"")
 	private Integer isActive;
 	
-	@Column(name="CREATEDON")
+	@Column(name="\"CREATEDON\"")
+	@CreationTimestamp
 	private Date createdOn;
 	
-	@Column(name="CREATEDBY")
-	private String createdBy;
+	@Column(name="\"CREATEDBY\"")
+	private Long createdBy;
 	
-	@Column(name="UPDATEDON")
+	@Column(name="\"UPDATEDON\"")
+	@UpdateTimestamp
 	private Date updatedOn;
 	
-	@Column(name="UPDATEDBY")
-	private Long updateBy;
+	@Column(name="\"UPDATEDBY\"")
+	private Long updatedBy;
 	
 }

@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "yemenEntityManager", 
 						transactionManagerRef = "yemenTransactionManager", 
-						basePackages = {})
+						basePackages = {"com.trigyn.authentication.repository"})
 @Slf4j
 public class DatabaseConfiguration 
 {
@@ -62,7 +62,7 @@ public class DatabaseConfiguration
     log.info("DatabaseConfiguration Before Calling Primary DataSource :");
     entityManagerFactoryBean.setDataSource( primaryDataSource());
     entityManagerFactoryBean.setPersistenceUnitName("yemen");
-    entityManagerFactoryBean.setPackagesToScan();
+    entityManagerFactoryBean.setPackagesToScan(new String[] {"com.trigyn.authentication.model"});
     entityManagerFactoryBean.setJpaVendorAdapter(vendorAdaptor());
     entityManagerFactoryBean.setJpaProperties(additionalProperties());
     log.info("databaseEntityManager() in DatabaseConfiguration with DataSource : " + entityManagerFactoryBean.toString());
