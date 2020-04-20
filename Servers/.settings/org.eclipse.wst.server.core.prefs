@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 #Mon Nov 25 22:50:46 IST 2019
 org.eclipse.wst.server.core.isServerProject=true
 eclipse.preferences.version=1
+=======
+#Mon Nov 25 22:50:46 IST 2019
+org.eclipse.wst.server.core.isServerProject=true
+eclipse.preferences.version=1
+>>>>>>> 015877d33c416a44442258f23eac1907bde167c8

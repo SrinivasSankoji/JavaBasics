@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: Bhaumik Chary
 Build-Jdk: 11.0.4
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: Bhaumik Chary
+Build-Jdk: 11.0.4
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> 015877d33c416a44442258f23eac1907bde167c8

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.demo.mail.configuration;
 
 import javax.mail.MessagingException;
@@ -26,3 +27,33 @@ public class SmtpMailSender
 	}
 
 }
+=======
+package com.example.demo.mail.configuration;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.stereotype.Component;
+
+@Component
+public class SmtpMailSender 
+{
+	@Autowired
+	private JavaMailSender javaMailSender;	
+	
+	public void send(String to, String subject, String body) throws MessagingException 
+	{
+		MimeMessage message = javaMailSender.createMimeMessage();
+		MimeMessageHelper helper;
+		helper = new MimeMessageHelper(message, true); 
+		helper.setSubject(subject);
+		helper.setTo(to);
+		helper.setText(body, true); 
+		javaMailSender.send(message);
+	}
+
+}
+>>>>>>> 015877d33c416a44442258f23eac1907bde167c8
