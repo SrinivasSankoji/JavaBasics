@@ -1,3 +1,5 @@
+
+
 package com.jio.ngo.common;
 
 import java.util.Date;
@@ -19,6 +21,7 @@ public class CommonProfile {
 	private String responseStatusMsg;
 	
 
+/*********************************************************Getter Setter************************************************/	
 	
 	
 	
@@ -53,5 +56,6 @@ public class CommonProfile {
 		this.responseStatusMsg = responseStatusMsg;
 	}
 	
+	
+	
 }
-
