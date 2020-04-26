@@ -1,4 +1,4 @@
-package com.jio.ngo.entities;
+package com.jio.ngo.sambamedia.entities;
 
 import java.io.Serializable;
 

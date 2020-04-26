@@ -1,4 +1,4 @@
-package com.jio.ngo.controllers;
+package com.jio.ngo.sambamedia.controllers;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jio.ngo.entities.User;
-import com.jio.ngo.repositories.UserRepository;
+import com.jio.ngo.sambamedia.entities.User;
+import com.jio.ngo.sambamedia.repositories.UserRepository;
 
 @RestController
 @RequestMapping("/api")
