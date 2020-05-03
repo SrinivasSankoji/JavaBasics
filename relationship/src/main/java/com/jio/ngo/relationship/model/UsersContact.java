@@ -4,11 +4,13 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 import lombok.Data;
 
@@ -19,14 +21,15 @@ public class UsersContact
 {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	@GeneratedValue(generator="SharedPrimaryKeyGenerator")
+	@GenericGenerator(name="SharedPrimaryKeyGenerator",strategy="foreign",parameters =  @Parameter(name="property", value="userRelationship"))
+	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
 	
 	private Integer phoneNo;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id",referencedColumnName = "id")
+	@PrimaryKeyJoinColumn(name = "id",referencedColumnName = "id")
 	private UserRelationship userRelationship;
 
 }
