@@ -18,7 +18,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "NOTEBOOK")
-public class Notebook {
+public class Notebook 
+{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     //@Column(name = "\"id\"")

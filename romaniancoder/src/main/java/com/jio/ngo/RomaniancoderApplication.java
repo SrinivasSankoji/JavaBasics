@@ -30,7 +30,7 @@ public class RomaniancoderApplication implements CommandLineRunner
 		//userRepository.save(new User("two", "one"));
 		//userRepository.save(new User("three", "one"));
 		
-		/**this.notebookRepository.deleteAll();
+		this.notebookRepository.deleteAll();
         this.noteRepository.deleteAll();
 
 
@@ -47,7 +47,7 @@ public class RomaniancoderApplication implements CommandLineRunner
 
         // Save a quote note
         Note quoteNote = new Note("Latin Quote", "Carpe Diem", quotesNotebook);
-        this.noteRepository.save(quoteNote);**/
+        this.noteRepository.save(quoteNote);
 		
 	}
 }
