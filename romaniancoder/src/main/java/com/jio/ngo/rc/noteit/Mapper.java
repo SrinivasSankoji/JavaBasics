@@ -31,10 +31,10 @@ public class Mapper
     public NoteViewModel convertToNoteViewModel(Note entity) {
     	NoteViewModel viewModel = new NoteViewModel();
         viewModel.setTitle(entity.getTitle());
-        viewModel.setId(entity.getId().toString());
+        viewModel.setId(entity.getNoteId().toString());
         viewModel.setLastModifiedOn(entity.getLastModifiedOn());
         viewModel.setText(entity.getText());
-        viewModel.setNotebookId(entity.getNotebook().getId().toString());
+        viewModel.setNotebookId(entity.getNotebook().getNotebookId().toString());
 
         return viewModel;
     }
@@ -42,13 +42,12 @@ public class Mapper
     public Note convertToNoteEntity(NoteViewModel viewModel) {
     	Notebook notebook = this.notebookRepository.findById(UUID.fromString(viewModel.getNotebookId())).get();
     	Note entity = new Note(viewModel.getId(), viewModel.getTitle(), viewModel.getText(), notebook);
-
         return entity;
     }
 
     public NotebookViewModel convertToNotebookViewModel(Notebook entity) {
     	NotebookViewModel viewModel = new NotebookViewModel();
-        viewModel.setId(entity.getId().toString());
+        viewModel.setId(entity.getNotebookId().toString());
         viewModel.setName(entity.getName());
         viewModel.setNbNotes(entity.getNotes().size());
 

@@ -7,34 +7,29 @@ import java.util.UUID;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "NOTEBOOK")
+//@Table(name = "NOTEBOOK")
 public class Notebook 
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    //@Column(name = "\"id\"")
-    private UUID id;
+    @GeneratedValue
+    @Column(name = "notebook_Id")
+    private UUID notebookId;
     
     @Column(name = "\"name\"")
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "notebook", cascade = CascadeType.ALL)
-    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "notebook_Id", referencedColumnName = "notebook_Id")
     private List<Note> notes;
 
-
     protected Notebook() {
-        this.id = UUID.randomUUID();
+        this.notebookId = UUID.randomUUID();
         this.notes = new ArrayList<>();
     }
 
@@ -46,14 +41,14 @@ public class Notebook
     public Notebook(String id, String name) {
         this();
         if (id != null) {
-            this.id = UUID.fromString(id);
+            this.notebookId = UUID.fromString(id);
         }
         this.name = name;
     }
 
 
-    public UUID getId() {
-        return id;
+    public UUID getNotebookId() {
+        return notebookId;
     }
 
     public String getName() {

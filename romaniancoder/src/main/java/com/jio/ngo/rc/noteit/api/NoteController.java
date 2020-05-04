@@ -90,7 +90,7 @@ public class NoteController
         return notesViewModel;
     }
 
-    @PostMapping
+    @PostMapping("/saveNotes")
     public Note save(@RequestBody NoteViewModel noteCreateViewModel, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             throw new ValidationException();

@@ -7,8 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.jio.ngo.rc.noteit.db.NoteRepository;
 import com.jio.ngo.rc.noteit.db.NotebookRepository;
-import com.jio.ngo.rc.noteit.model.Note;
-import com.jio.ngo.rc.noteit.model.Notebook;
 
 @SpringBootApplication
 public class RomaniancoderApplication implements CommandLineRunner
@@ -26,13 +24,8 @@ public class RomaniancoderApplication implements CommandLineRunner
 	@Override
 	public void run(String... args) throws Exception 
 	{
-		//userRepository.save(new User("one", "one"));
-		//userRepository.save(new User("two", "one"));
-		//userRepository.save(new User("three", "one"));
-		
-		this.notebookRepository.deleteAll();
+		 /**this.notebookRepository.deleteAll();
         this.noteRepository.deleteAll();
-
 
         // Save a default notebook
         Notebook defaultNotebook = new Notebook("Default");
@@ -47,7 +40,6 @@ public class RomaniancoderApplication implements CommandLineRunner
 
         // Save a quote note
         Note quoteNote = new Note("Latin Quote", "Carpe Diem", quotesNotebook);
-        this.noteRepository.save(quoteNote);
-		
+        this.noteRepository.save(quoteNote);**/
 	}
 }

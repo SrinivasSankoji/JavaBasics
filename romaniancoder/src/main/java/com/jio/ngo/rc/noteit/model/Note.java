@@ -3,24 +3,22 @@ package com.jio.ngo.rc.noteit.model;
 import java.util.Date;
 import java.util.UUID;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "NOTE")
+//@Table(name = "NOTE")
 public class Note
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    //@Column(name = "\"id\"")
-    private UUID id;
+    @GeneratedValue
+    @Column(name = "note_Id")
+    private UUID noteId;
     
     @Column(name = "\"title\"")
     private String title;
@@ -28,15 +26,15 @@ public class Note
     @Column(name = "\"text\"")
     private String text;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", referencedColumnName = "id", insertable = false, updatable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "notebook_Id", referencedColumnName = "notebook_Id")
     private Notebook notebook;
 
     @Column(name = "LASTMODIFIEDON")
     private Date lastModifiedOn;
 
     protected Note() {
-        this.id = UUID.randomUUID();
+        this.noteId = UUID.randomUUID();
         this.lastModifiedOn = new Date();
     }
 
@@ -50,16 +48,15 @@ public class Note
     public Note(String id, String title, String text, Notebook notebook) {
         this(title, text, notebook);
         if (id != null) {
-            this.id = UUID.fromString(id);
+            this.noteId = UUID.fromString(id);
         }
     }
 
+    public UUID getNoteId() {
+		return noteId;
+	}
 
-    public UUID getId() {
-        return id;
-    }
-
-    public String getTitle() {
+	public String getTitle() {
         return title;
     }
 
@@ -72,7 +69,7 @@ public class Note
     }
 
     public String getNotebookId() {
-        return this.notebook.getId().toString();
+        return this.notebook.getNotebookId().toString();
     }
 
     public Date getLastModifiedOn() {
