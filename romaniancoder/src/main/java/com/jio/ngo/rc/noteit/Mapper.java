@@ -1,5 +1,6 @@
 package com.jio.ngo.rc.noteit;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +40,10 @@ public class Mapper
         return viewModel;
     }
 
-    public Note convertToNoteEntity(NoteViewModel viewModel) {
-    	Notebook notebook = this.notebookRepository.findById(UUID.fromString(viewModel.getNotebookId())).get();
-    	Note entity = new Note(viewModel.getId(), viewModel.getTitle(), viewModel.getText(), notebook);
-        return entity;
+	public Note convertToNoteEntity(NoteViewModel viewModel) 
+	{
+    	Optional<Notebook> notebook = this.notebookRepository.findById(UUID.fromString(viewModel.getNotebookId()));
+    	return  new Note(viewModel.getId(), viewModel.getTitle(), viewModel.getText(), notebook.isPresent()?notebook.get():null);
     }
 
     public NotebookViewModel convertToNotebookViewModel(Notebook entity) {
@@ -54,9 +55,7 @@ public class Mapper
         return viewModel;
     }
 
-    public Notebook convertToNotebookEntity(NotebookViewModel viewModel) {
-    	Notebook entity = new Notebook(viewModel.getId(), viewModel.getName());
-
-        return entity;
-    }
+	public Notebook convertToNotebookEntity(NotebookViewModel viewModel) {
+		return new Notebook(viewModel.getId(), viewModel.getName());
+	}
 }

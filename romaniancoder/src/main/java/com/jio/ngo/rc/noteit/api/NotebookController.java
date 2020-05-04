@@ -2,6 +2,7 @@ package com.jio.ngo.rc.noteit.api;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import javax.validation.ValidationException;
 
@@ -21,13 +22,8 @@ import com.jio.ngo.rc.noteit.api.viewmodel.NotebookViewModel;
 import com.jio.ngo.rc.noteit.db.NotebookRepository;
 import com.jio.ngo.rc.noteit.model.Notebook;
 
-/*
-Requests can be tested using the built in HTTP Rest Client. Use the
-examples found in 'noteit.http' file.
- */
-
 @RestController
-@RequestMapping("/api/notebooks")
+@RequestMapping("/api/notebook")
 @CrossOrigin
 public class NotebookController 
 {
@@ -42,26 +38,23 @@ public class NotebookController
         this.mapper = mapper;
     }
 
-    @GetMapping("/all")
-    public List<Notebook> all() {
-    	List<Notebook> allCategories = this.notebookRepository.findAll();
-        return allCategories;
-    }
+    @GetMapping("/getAllNoteBooks")
+	public List<NotebookViewModel> getAllNoteBooks() {
+		List<Notebook> notebooks = notebookRepository.findAll();
+		return notebooks.stream().map(notebook -> this.mapper.convertToNotebookViewModel(notebook))
+				.collect(Collectors.toList());
+	}
 
-    @PostMapping
+    @PostMapping("/saveNotebook")
     public Notebook save(@RequestBody NotebookViewModel notebookViewModel,
-                         BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            throw new ValidationException();
-        }
-
-        Notebook notebookEntity = this.mapper.convertToNotebookEntity(notebookViewModel);
-
-        // save notebookEntity instance to db
-        this.notebookRepository.save(notebookEntity);
-
-        return notebookEntity;
-    }
+			BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			throw new ValidationException();
+		}
+		Notebook notebookEntity = this.mapper.convertToNotebookEntity(notebookViewModel);
+		this.notebookRepository.save(notebookEntity);
+		return notebookEntity;
+	}
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable String id) {

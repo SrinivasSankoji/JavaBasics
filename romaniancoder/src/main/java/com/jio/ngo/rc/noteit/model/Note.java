@@ -10,9 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-//@Table(name = "NOTE")
+@Table(name = "NOTE")
 public class Note
 {
     @Id
@@ -28,6 +31,7 @@ public class Note
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "notebook_Id", referencedColumnName = "notebook_Id")
+    @JsonIgnore
     private Notebook notebook;
 
     @Column(name = "LASTMODIFIEDON")

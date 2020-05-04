@@ -48,61 +48,44 @@ public class NoteController
 
     
 
-    @GetMapping("/all")
-    public List<NoteViewModel> all() {
-    	List<Note> notes = this.noteRepository.findAll();
-
-        // map from entity to view model
-    	List<NoteViewModel> notesViewModel = notes.stream()
-                .map(note -> this.mapper.convertToNoteViewModel(note))
-                .collect(Collectors.toList());
-
-        return notesViewModel;
-    }
+    @GetMapping("/getAllNotes")
+    public List<NoteViewModel> getAllNotes() 
+	{
+		List<Note> notes = this.noteRepository.findAll();
+		return notes.stream().map(note -> this.mapper.convertToNoteViewModel(note)).collect(Collectors.toList());
+	}
 
     @GetMapping("/byId/{id}")
-    public NoteViewModel byId(@PathVariable String id) {
-    	Note note = this.noteRepository.findById(UUID.fromString(id)).orElse(null);
-
-        if (note == null) {
-            throw new EntityNotFoundException();
-        }
-
-        NoteViewModel noteViewModel = this.mapper.convertToNoteViewModel(note);
-
-        return noteViewModel;
-    }
+	public NoteViewModel byId(@PathVariable String id) 
+    {
+		Note note = this.noteRepository.findById(UUID.fromString(id)).orElse(null);
+		if (note == null) {
+			throw new EntityNotFoundException();
+		}
+		return this.mapper.convertToNoteViewModel(note);
+	}
 
     @GetMapping("/byNotebook/{notebookId}")
-    public List<NoteViewModel> byNotebook(@PathVariable String notebookId) {
-        List<Note> notes = new ArrayList<>();
-
-        Optional<Notebook> notebook = this.notebookRepository.findById(UUID.fromString(notebookId));
-        if (notebook.isPresent()) {
-            notes = this.noteRepository.findAllByNotebook(notebook.get());
-        }
-
-        // map to note view model
-        List<NoteViewModel> notesViewModel = notes.stream()
-                .map(note -> this.mapper.convertToNoteViewModel(note))
-                .collect(Collectors.toList());
-
-        return notesViewModel;
-    }
+    public List<NoteViewModel> byNotebook(@PathVariable String notebookId)
+	{
+		List<Note> notes = new ArrayList<>();
+		Optional<Notebook> notebook = this.notebookRepository.findById(UUID.fromString(notebookId));
+		if (notebook.isPresent()) {
+			notes = this.noteRepository.findAllByNotebook(notebook.get());
+		}
+		return notes.stream().map(note -> this.mapper.convertToNoteViewModel(note)).collect(Collectors.toList());
+	}
 
     @PostMapping("/saveNotes")
-    public Note save(@RequestBody NoteViewModel noteCreateViewModel, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            throw new ValidationException();
-        }
-
-        Note noteEntity = this.mapper.convertToNoteEntity(noteCreateViewModel);
-
-        // save note instance to db
-        this.noteRepository.save(noteEntity);
-
-        return noteEntity;
-    }
+    public Note save(@RequestBody NoteViewModel noteCreateViewModel, BindingResult bindingResult)
+	{
+		if (bindingResult.hasErrors()) {
+			throw new ValidationException();
+		}
+		Note noteEntity = mapper.convertToNoteEntity(noteCreateViewModel);
+		Note result=noteRepository.save(noteEntity);
+		return result;
+	}
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable String id) {

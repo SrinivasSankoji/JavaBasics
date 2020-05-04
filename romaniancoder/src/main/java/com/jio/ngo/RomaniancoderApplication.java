@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.jio.ngo.rc.noteit.db.NoteRepository;
 import com.jio.ngo.rc.noteit.db.NotebookRepository;
+import com.jio.ngo.rc.noteit.model.Note;
+import com.jio.ngo.rc.noteit.model.Notebook;
 
 @SpringBootApplication
 public class RomaniancoderApplication implements CommandLineRunner
@@ -24,7 +26,7 @@ public class RomaniancoderApplication implements CommandLineRunner
 	@Override
 	public void run(String... args) throws Exception 
 	{
-		 /**this.notebookRepository.deleteAll();
+		/**this.notebookRepository.deleteAll();
         this.noteRepository.deleteAll();
 
         // Save a default notebook
