@@ -5,8 +5,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -23,13 +23,13 @@ public class UsersContact
 	@Id
 	@GeneratedValue(generator="SharedPrimaryKeyGenerator")
 	@GenericGenerator(name="SharedPrimaryKeyGenerator",strategy="foreign",parameters =  @Parameter(name="property", value="userRelationship"))
-	@Column(name = "id", unique = true, nullable = false)
-	private Long id;
+	@Column(name = "contact_id", unique = true, nullable = false)
+	private Long contactId;
 	
 	private Integer phoneNo;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn(name = "id",referencedColumnName = "id")
+	@JoinColumn(name = "contact_id",referencedColumnName = "user_id")
 	private UserRelationship userRelationship;
 
 }
