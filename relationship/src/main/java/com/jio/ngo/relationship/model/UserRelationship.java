@@ -35,9 +35,19 @@ public class UserRelationship implements Serializable
 	@Column(name = "salary")
 	private Integer salary;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	/**
+	 * name and Referenced Column Name
+	 * should be the Same as Parent Table.
+	 * name Parent Table Primary Key
+	 * referencedColumnName Foreign Key
+	 * of Child Table which is Primary Key 
+	 * in Parent Table
+	 */
+	/**@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
-	private List<UserLog> userLogList;
+	private List<UserLog> userLogList;**/
+	
+	
 	
 	
 }

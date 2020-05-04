@@ -46,7 +46,7 @@ public class UsersContactController
 		userRelationship.setName(name);
 		userRelationship.setTeamName("Asset Manager");
 		userRelationship.setSalary(9000);
-		userRelationship.setUserLogList(userLogList);
+		//userRelationship.setUserLogList(userLogList);
 		
 		UsersContact usersContact = new UsersContact();
 		usersContact.setPhoneNo(771897368);

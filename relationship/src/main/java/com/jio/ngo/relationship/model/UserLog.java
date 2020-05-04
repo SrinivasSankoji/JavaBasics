@@ -2,11 +2,14 @@ package com.jio.ngo.relationship.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -26,8 +29,11 @@ public class UserLog implements Serializable
 	
 	private String log;
 	
-	@Column(name = "user_id")
-	private Integer userId;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_id" ,referencedColumnName = "user_id")
+	private UserRelationship userRelationship;
 	
-
+	/**@Column(name = "user_id")
+	private Integer userId;**/
+	
 }

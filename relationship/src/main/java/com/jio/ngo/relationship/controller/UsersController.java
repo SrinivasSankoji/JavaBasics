@@ -15,7 +15,7 @@ import com.jio.ngo.relationship.repository.UserRepository;
 
 @RestController
 @RequestMapping("/users")
-public class RelationshipController 
+public class UsersController 
 {
 	@Autowired
 	UserRepository userRepository;
