@@ -32,7 +32,7 @@ public class ExceptionDateTest {
 		 * Convert Date from one Format 
 		 * to another Format
 		 */
-		String str2 = "24-MAR-2020";
+		String str2 = "30-MAR-2020";
 		DateTimeFormatter oldPattern= new DateTimeFormatterBuilder().parseCaseInsensitive()
 				.appendPattern("dd-MMM-yyyy").toFormatter();
 		DateTimeFormatter newPattern = DateTimeFormatter.ofPattern("yyyy-M-d");
