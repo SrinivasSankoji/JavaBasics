@@ -27,7 +27,6 @@ public class ExceptionDateTest {
 		//long diffInDays1 = ChronoUnit.DAYS.between(passedDate1, currentDate1);
 		//System.out.println(passedDate1.isEqual(currentDate1));
 		
-		
 		/**
 		 * Convert Date from one Format 
 		 * to another Format
@@ -44,7 +43,6 @@ public class ExceptionDateTest {
 		DateTimeFormatter eroasterPattern = DateTimeFormatter.ofPattern("yyyy");
 		String roasterDate = now.format(eroasterPattern);
 		System.out.println("Roaster Date : "+roasterDate.toUpperCase());
-		
 	}
 
 }
