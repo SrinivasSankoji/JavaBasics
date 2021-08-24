@@ -9,18 +9,28 @@ public class EqualsDemo {
 		this.name=name;
 		this.rollno=rollno;
 	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + rollno;
+		return result;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		try {
-		int rollno1 = this.rollno;
-		String name1 = this.name;
-
+		if (obj == null) {
+			return false;
+		}
 		EqualsDemo equalsDemo = (EqualsDemo) obj;
 
 		int rollno2 = equalsDemo.rollno;
 		String name2 = equalsDemo.name;
 
-		if (name1.equals(name2) && rollno1 == rollno2) {
+		if (this.name.equals(name2) && this.rollno == rollno2) {
 			return true;
 			}
 		}

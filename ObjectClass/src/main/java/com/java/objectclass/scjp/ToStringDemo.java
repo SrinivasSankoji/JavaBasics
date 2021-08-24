@@ -1,8 +1,8 @@
 package com.java.objectclass.scjp;
 
 public class ToStringDemo {
-	String name;
-	int rollno;
+	private String name;
+	private int rollno;
 	public ToStringDemo(String name, int rollno) {
 		this.name=name;
 		this.rollno=rollno;
@@ -13,10 +13,6 @@ public class ToStringDemo {
 	}
 	@Override
 	public String toString() {
-		return name +"- "+rollno;
-	}
-	@Override
-	public int hashCode() {
-		return rollno;
+		return "Name of the Student is "+name +" And his Rollno is "+rollno;
 	}
 }
