@@ -12,6 +12,6 @@ public class ImmutableTest {
 		final StringBuffer sb=new StringBuffer("Durga");
 		sb.append(" Software");
 		System.out.println(sb);
-		//sb=new StringBuffer("Naresh");
+		//sb=new StringBuffer("Naresh"); CTE final variables cannot be reassigned.
 	}
 }

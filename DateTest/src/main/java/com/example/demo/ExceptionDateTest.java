@@ -40,7 +40,7 @@ public class ExceptionDateTest {
 		System.out.println(formattedString);
 		
 		LocalDate now = LocalDate.now();
-		DateTimeFormatter eroasterPattern = DateTimeFormatter.ofPattern("yyyy");
+		DateTimeFormatter eroasterPattern = DateTimeFormatter.ofPattern("yyyyMMdd");
 		String roasterDate = now.format(eroasterPattern);
 		System.out.println("Roaster Date : "+roasterDate.toUpperCase());
 	}
