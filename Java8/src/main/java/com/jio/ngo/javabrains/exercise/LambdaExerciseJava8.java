@@ -26,7 +26,7 @@ public class LambdaExerciseJava8 {
 		printConditionally(people,p -> true);
 		
 		//Display Last Name that Begins with C Using Pass by Behavior
-		printConditionally(people, p -> p.getLastName().startsWith("C"));
+		//printConditionally(people, p -> p.getLastName().startsWith("C"));
 		
 	}
 	

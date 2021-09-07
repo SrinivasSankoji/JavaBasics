@@ -31,9 +31,9 @@ public class ExceptionDateTest {
 		 * Convert Date from one Format 
 		 * to another Format
 		 */
-		String str2 = "30-MAR-2020";
+		String str2 = "31-08-20201";
 		DateTimeFormatter oldPattern= new DateTimeFormatterBuilder().parseCaseInsensitive()
-				.appendPattern("dd-MMM-yyyy").toFormatter();
+				.appendPattern("dd-MM-yyyy").toFormatter();
 		DateTimeFormatter newPattern = DateTimeFormatter.ofPattern("yyyy-M-d");
 		LocalDate localDate = LocalDate.parse(str2, oldPattern);
 		String formattedString = localDate.format(newPattern);
