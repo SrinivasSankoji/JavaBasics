@@ -142,12 +142,18 @@ public class WinterbeStream
 		.forEach(System.out::println);
 	}
 
+	/**
+	 * Way of creating Stream
+	 */
 	private static void exampleThree() 
 	{
 		Stream.of("a1","a2","a3").findFirst().ifPresent(System.out::println);
 		
 	}
 
+	/**
+	 * Way of creating Stream
+	 */
 	private static void exampleTwo() 
 	{
 		Arrays.asList("a1","a2","a3")
@@ -158,6 +164,7 @@ public class WinterbeStream
 	{
 		 List<String> myList=Arrays.asList("a1", "a2", "b1", "c2", "c1");
 		 myList.stream().filter(s -> s.startsWith("a"))
+		 .map(String::toUpperCase)
 		.sorted()
 		.forEach(System.out::println);
 	}

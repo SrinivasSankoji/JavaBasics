@@ -19,8 +19,8 @@ public class WinterbeCollect
 		//summarizingInt();
 		//joining();
 		//averagingInt();
-		//collectorMap();
-		groupingBy();
+		collectorMap();
+		//groupingBy();
 	}
 
 	private static void groupingBy() 
@@ -32,8 +32,8 @@ public class WinterbeCollect
 		Student s5 = new Student("Krishna", 21, "B");
 		List<Student> list = Arrays.asList(s1, s2, s3, s4, s5);
 		Map<String, List<Student>> result = list.stream().collect(Collectors.groupingBy(Student::getClassName));
-		Optional<List<Student>> results = result.entrySet().stream().map(Map.Entry::getValue).findAny();
-		results.get().forEach(s -> System.out.println(s));
+		List<Student> results = result.entrySet().stream().map(Map.Entry::getValue).flatMap(List::stream).collect(Collectors.toList());
+		results.forEach(s -> System.out.println(s));
 	}
 
 	@SuppressWarnings("unused")
@@ -59,7 +59,7 @@ public class WinterbeCollect
 	private static void joining() 
 	{
 		List<String> names=Arrays.asList("Ram","Shyam","Shiv","Mahesh");
-		String result=names.stream().collect(Collectors.joining("','", "'", "'"));
+		String result=names.stream().collect(Collectors.joining("','", "['", "']"));
 		System.out.println(result);
 	}
 
