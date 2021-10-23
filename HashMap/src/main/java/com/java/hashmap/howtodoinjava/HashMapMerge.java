@@ -5,6 +5,8 @@ import java.util.HashMap;
 public class HashMapMerge {
 
 	public static void main(String[] args) {
+		
+		String name="Srinivas Chary";
 
 		//map 1
 		HashMap<Integer, String> map1 = new HashMap<>();
@@ -26,8 +28,8 @@ public class HashMapMerge {
 		//map1.putAll(map2);
 		
 		//Merge the values if Both the Maps has the Same Key
-		map2.forEach((key,value) -> map1.merge(key,value, (v1,v2) -> v1.equalsIgnoreCase(v2)?v1:v1+","+v2));
-		 
+		//map2.forEach((key,value) -> map1.merge(key,value, (v1,v2) -> v1.equalsIgnoreCase(v2)?v1:v1+","+v2));
+		
 		System.out.println(map1);
 	}
 
