@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.text.SimpleDateFormat;
 /**
  * @author Srinvas Sankoji
  */
@@ -34,18 +35,36 @@ public class ExceptionDateTest {
 		 * Convert Date from one Format 
 		 * to another Format
 		 */
-		/**String str2 = "31-08-20201";
+		String dateInString = "27-10-2021";
+		//System.out.println(convertDateFromoneFormat(dateInString));
+		System.out.println(addDays(dateInString));
+		
+		/**LocalDate now = LocalDate.now();
+		DateTimeFormatter eroasterPattern = DateTimeFormatter.ofPattern("yyyyMMdd");
+		String roasterDate = now.format(eroasterPattern);
+		System.out.println("Roaster Date : "+roasterDate.toUpperCase());**/
+	}
+
+	private static String convertDateFromoneFormat(String dateInString)
+	{
 		DateTimeFormatter oldPattern= new DateTimeFormatterBuilder().parseCaseInsensitive()
 				.appendPattern("dd-MM-yyyy").toFormatter();
 		DateTimeFormatter newPattern = DateTimeFormatter.ofPattern("yyyy-M-d");
-		LocalDate localDate = LocalDate.parse(str2, oldPattern);
+		LocalDate localDate = LocalDate.parse(dateInString, oldPattern);
 		String formattedString = localDate.format(newPattern);
-		System.out.println(formattedString);**/
-		
-		LocalDate now = LocalDate.now();
-		DateTimeFormatter eroasterPattern = DateTimeFormatter.ofPattern("yyyyMMdd");
-		String roasterDate = now.format(eroasterPattern);
-		System.out.println("Roaster Date : "+roasterDate.toUpperCase());
+		return formattedString;		
 	}
-
+	
+	/**
+	 * Adding Day to the Date 
+	 * @param dateInString
+	 * @return String
+	 */
+	private static String addDays(String dateInString) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		LocalDate localDate = LocalDate.parse(dateInString, formatter);
+		LocalDate newDate = localDate.plusDays(1);
+		return DateTimeFormatter.ofPattern("dd-MM-yyyy").format(newDate);
+		
+	}
 }

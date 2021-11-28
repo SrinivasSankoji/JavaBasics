@@ -4,7 +4,7 @@ public class OverloadingDemo {
 
 	public void m1()
 	{
-		System.out.println("No Argument COnstructor");
+		System.out.println("No Argument Constructor");
 	}
 	public void m1(int i)
 	{

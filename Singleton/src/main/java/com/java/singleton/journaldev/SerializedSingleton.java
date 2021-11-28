@@ -22,8 +22,8 @@ public class SerializedSingleton implements Serializable {
 		return instance;
 	}
 
-		//Called during deSerialization
-		protected Object readResolve() {
-			return getInstance();
-		}
+	//Called during deSerialization and Same Object is created during DeSerialization
+	protected Object readResolve() {
+		return getInstance();
+	}
 }
