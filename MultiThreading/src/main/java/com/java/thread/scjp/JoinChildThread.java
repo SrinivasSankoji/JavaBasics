@@ -1,11 +1,11 @@
 package com.java.thread.scjp;
 
 public class JoinChildThread extends Thread {
-	static Thread minThread;
+	static Thread mainThread;
 	@Override
 	public void run(){
 		try {
-			minThread.join();
+			mainThread.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
