@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ComparatorOldWay {
 	
@@ -33,12 +32,9 @@ public class ComparatorOldWay {
 		 * Comparator using then Comparing
 		 */
 		Comparator<Employee> nameAgeComparing=Comparator.comparing(Employee::getAge).thenComparing(Employee::getName);
-		Collections.sort(employeeList,nameAgeComparing);
-		System.out.println(employeeList);
-		
-		List<String> empList=employeeList.stream().map(Employee::getName).collect(Collectors.toList());
-		empList.sort(Comparator.reverseOrder());
-		System.out.println(empList);
+		Collections.sort(employeeList,nameComparator);
+		employeeList.sort(nameComparing);
+		employeeList.forEach(System.out::println);
 	}
 }
 /**

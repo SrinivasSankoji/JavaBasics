@@ -18,7 +18,7 @@ public class ComparatorDemo {
 		Comparator<Student> nameComparator = (c1, c2) -> {
 			return c1.getName().compareTo(c2.getName());
 		};
-		//Collections.sort(list,nameComparator);
+		Collections.sort(list,nameComparator);
 		Collections.sort(list,Comparator.comparing(Student::getId).thenComparing(Student::getName));
 		System.out.println(list);
 		

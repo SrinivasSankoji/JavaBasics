@@ -51,7 +51,8 @@ public class WinterbeCollect {
 	private static void joining() {
 		System.out.println("joining --> Start ");
 		List<String> names = Arrays.asList("Ram", "Shyam", "Shiv", "Mahesh");
-		String result = names.stream().collect(Collectors.joining("','", "['", "']"));
+		//String result = names.stream().collect(Collectors.joining("','", "['", "']"));
+		String result = names.stream().collect(Collectors.joining(","));
 		System.out.println(result);
 		System.out.println("joining --> End ");
 	}
