@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.jio.ngo.beginnersbook.stringjoiner;
 
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

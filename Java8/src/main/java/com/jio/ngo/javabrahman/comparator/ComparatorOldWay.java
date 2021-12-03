@@ -1,4 +1,4 @@
-package com.java.arraylist.javabrahman;
+package com.jio.ngo.javabrahman.comparator;
 
 import java.util.Arrays;
 import java.util.Collections;

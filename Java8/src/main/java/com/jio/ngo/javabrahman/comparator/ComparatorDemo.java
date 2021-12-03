@@ -1,4 +1,4 @@
-package com.java.arraylist.conceptoftheday;
+package com.jio.ngo.javabrahman.comparator;
 
 import java.util.ArrayList;
 import java.util.Collections;

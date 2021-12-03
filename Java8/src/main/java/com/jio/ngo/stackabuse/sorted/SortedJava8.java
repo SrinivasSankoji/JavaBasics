@@ -1,4 +1,4 @@
-package com.java.arraylist.stackabuse;
+package com.jio.ngo.stackabuse.sorted;
 
 import java.util.Arrays;
 import java.util.Collections;
