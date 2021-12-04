@@ -1,4 +1,4 @@
-package com.jio.ngo.javabrahman.comparator;
+package com.jio.ngo.comparator;
 
 import java.io.Serializable;
 
@@ -9,12 +9,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee implements Serializable {
+public class Employee implements Serializable,Comparable<Employee> {
 
 	private static final long serialVersionUID = 1L;
 
-	private String name;
-	private Integer age;
+	private int id;
+    private String name;
+    private int age;
+    private long salary;
 
 	public boolean equals(Object object) {
 		if (object == this) {
@@ -33,5 +35,13 @@ public class Employee implements Serializable {
 		hash = hash * prime + this.name.hashCode();
 		hash = hash * prime + this.age;
 		return hash;
+	}
+
+	/**
+	 * Not required to override while using Comparator
+	 */
+	@Override
+	public int compareTo(Employee employee) {
+		return this.getName().compareTo(employee.getName());
 	}
 }
