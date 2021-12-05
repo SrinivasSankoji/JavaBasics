@@ -1,25 +1,16 @@
 package com.jio.ngo.beginnersbook.stringjoiner;
 
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.util.StringJoiner;
 
 public class StringJoinerDemo {
-
 	public static void main(String[] args) {
-		int[] intArray = {234, 808, 342};
-		
 		/**
 		 * Joining with Comma Separated Values
 		 */
-		String result = IntStream.of(intArray)
-                .mapToObj(Integer::toString)
-                .collect(Collectors.joining("','","'","'"));
-		System.out.println(result);
-		
-		String result1 = IntStream.of(intArray)
-                .mapToObj(Integer::toString)
-                .collect(Collectors.joining(","));
-		System.out.println(result1);
+		StringJoiner joiner = new StringJoiner(" ");
+		joiner.add("Srinivas");
+		joiner.add("Chary");
+		joiner.add("Sankoji");
+		System.out.println(joiner);
 	}
-
 }

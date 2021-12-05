@@ -10,11 +10,11 @@ public class OrElseDemo {
         //Optional.empty() creates an empty Optional object        
         Optional<String> nothing = Optional.empty();
         
-        System.out.println(GOT.orElse("Empty Value"));
-        System.out.println(nothing.orElse("Empty Value"));
+        System.out.println(GOT.orElse("Empty Value")); //Game of Thrones
+        System.out.println(nothing.orElse("Empty Value")); // Empty Value
         
-        System.out.println(GOT.orElseGet(() -> "Empty Value"));
-        System.out.println(nothing.orElseGet(() -> "Empty Value"));
+        System.out.println(GOT.orElseGet(() -> "Empty Value")); //Game of Thrones
+        System.out.println(nothing.orElseGet(() -> "Empty Value")); // Empty Value
 	}
 
 }

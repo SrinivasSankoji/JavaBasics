@@ -8,7 +8,7 @@ public class IfPresentDemo {
 
 		Optional<String> valueOne=Optional.ofNullable("This is Non Empty checked using IfPresent Method");
 		Optional<String> valuetwo=Optional.empty();
-		valueOne.ifPresent(System.out::println);
-		valuetwo.ifPresent(System.out::println);
+		valueOne.ifPresent(System.out::println); //This is Non Empty checked using IfPresent Method
+		valuetwo.ifPresent(System.out::println); //No Output
 	}
 }

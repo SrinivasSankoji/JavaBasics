@@ -5,13 +5,14 @@ public class OverridingDemo {
 	public static void main(String[] args) {
 
 		ParentDemo parentDemo=new ParentDemo();
-		parentDemo.marriage();
+		parentDemo.marriage();//Arranged Marriage
 		
 		ChildDemo childDemo=new ChildDemo();
-		childDemo.marriage();
+		childDemo.marriage();//Love Marriage
 		
 		ParentDemo parentChild=new ChildDemo();
-		parentChild.marriage();
+		parentChild.marriage();//Love Marriage
+		
 	}
 
 }
