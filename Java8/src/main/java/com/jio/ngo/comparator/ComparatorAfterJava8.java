@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ComparatorAfterJava8 {
 	static List<Employee> employeeList = Arrays.asList(new Employee(10, "Mikey", 25, 10000),
@@ -21,9 +22,13 @@ public class ComparatorAfterJava8 {
 		 * Comparator using Method Reference
 		 */
 		//Collections.sort(employeeList, Comparator.comparing(Employee::getName));
-		Collections.sort(employeeList,Comparator.comparing(Employee::getName).reversed()); // Reverse Order
+		Collections.sort(employeeList,Comparator.comparing(Employee::getSalary).reversed()); // Reverse Order using Collections Class sort().
 		//Collections.sort(employeeList, Comparator.comparing(Employee::getId).thenComparing(Employee::getName));
-		employeeList.stream().forEach(System.out::println);
+		//employeeList.sort(Comparator.comparing(Employee::getName).reversed());// Reverse Order using List Interface Class sort().
+		//employeeList.stream().limit(2).forEach(System.out::println);
+		//employeeList.stream().forEach(System.out::println);
+		
+		employeeList.stream().filter(emp -> emp.getAge()>30).forEach(System.out::println);
 
 	}
 }

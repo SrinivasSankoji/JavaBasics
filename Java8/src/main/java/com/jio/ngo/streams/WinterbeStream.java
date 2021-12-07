@@ -24,6 +24,7 @@ public class WinterbeStream {
 		exampleThirteen();
 		exampleFourteen();
 		exampleFifteen();
+		findEvenNumbers();
 	}
 
 	/**
@@ -70,6 +71,11 @@ public class WinterbeStream {
 		System.out.println("Example Five --> Way of creating using Arrays.stream --> Start ");
 		Arrays.stream(new int[] { 1, 2, 3 }).map(n -> 2 * n + 1).average().ifPresent(System.out::println);
 		System.out.println("Example Five --> Way of creating using Arrays.stream --> End ");
+	}
+	
+	private static void findEvenNumbers() {
+		System.out.println("Example Five --> Way of creating using Arrays.stream --> Start ");
+		Arrays.stream(new int[] { 1, 2, 3 }).filter(n -> n%2==0).forEach(System.out::println);
 	}
 
 	/**
