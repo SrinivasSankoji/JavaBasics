@@ -17,4 +17,8 @@ final class Immutable {
 	public int getI() {
 		return i;
 	}
+	public Immutable() {
+		super();
+	}
+	
 }

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 import com.jio.ngo.winterbe.model.Person;
@@ -95,9 +96,13 @@ public class WinterbeCollect {
 		Student s5 = new Student("Krishna", 21, "B");
 		List<Student> list = Arrays.asList(s1, s2, s3, s4, s5);
 		Map<String, List<Student>> result = list.stream().collect(Collectors.groupingBy(Student::getClassName));
+		
+		Map<String, Long> classCount=list.stream().collect(Collectors.groupingBy(Student::getClassName,TreeMap::new, Collectors.counting()));
+		
 		List<Student> results = result.entrySet().stream().map(Map.Entry::getValue).flatMap(List::stream)
 				.collect(Collectors.toList());
-		results.forEach(s -> System.out.println(s));
+		//results.forEach(s -> System.out.println(s));
+		System.out.println(classCount);
 		System.out.println("groupingBy --> End ");
 	}
 
