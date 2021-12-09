@@ -1,5 +1,7 @@
-package com.javainterview.modifiers;
-import com.javainterview.classloading.A;
+package com.modifiers.beginnersbook.protecteddemo;
+
+import com.modifiers.A;
+
 public class B extends A{
 	protected void m3() {
 		System.out.println("Inside modifiers Child Package");

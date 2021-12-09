@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.interview.demo.srinivas;
 
 public class VyTech {
 

@@ -1,4 +1,4 @@
-package com.javainterview.modifiers;
+package com.modifiers.beginnersbook.protecteddemo;
 
 public class FinalDemo {
 	/**

@@ -1,13 +1,13 @@
-package com.modifiers.demo;
+package com.interview;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ModifiersApplication {
+public class LogicalQuestionsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ModifiersApplication.class, args);
+		SpringApplication.run(LogicalQuestionsApplication.class, args);
 	}
 
 }
