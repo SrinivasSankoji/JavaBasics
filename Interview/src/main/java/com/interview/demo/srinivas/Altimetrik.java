@@ -59,19 +59,19 @@ public class Altimetrik {
 		String[] resArray = removeSpace.split("\\s");
 		StringBuilder builder = new StringBuilder();
 		Arrays.asList(resArray).forEach(builder::append);// To convert List to String using Java 8
-		//System.out.println(builder);
-		
+		// System.out.println(builder);
+
 		/**
 		 * Convert List to String using reduce
 		 */
-		String listToString=Arrays.asList(resArray).stream().reduce("", String::concat);
+		String listToString = Arrays.asList(resArray).stream().reduce("", String::concat);
 		System.out.println(listToString);
-		
+
 		/**
 		 * Convert List to String using collect
 		 */
-		String listToStr=Arrays.asList(resArray).stream().collect(Collectors.joining(""));
-		//System.out.println(listToStr);
+		String listToStr = Arrays.asList(resArray).stream().collect(Collectors.joining(""));
+		// System.out.println(listToStr);
 	}
 
 }

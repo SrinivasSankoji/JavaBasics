@@ -1,4 +1,4 @@
-package com.java.oops.scjp;
+package com.java.oops.constructor;
 
 public class ConstructorDemo {
 
