@@ -24,11 +24,11 @@ public class ComparatorAfterJava8 {
 		//Collections.sort(employeeList, Comparator.comparing(Employee::getName));
 		Collections.sort(employeeList,Comparator.comparing(Employee::getSalary).reversed()); // Reverse Order using Collections Class sort().
 		//Collections.sort(employeeList, Comparator.comparing(Employee::getId).thenComparing(Employee::getName));
-		//employeeList.sort(Comparator.comparing(Employee::getName).reversed());// Reverse Order using List Interface Class sort().
+		employeeList.sort(Comparator.comparing(Employee::getName).thenComparing(Employee::getName));// Reverse Order using List Interface Class sort().
 		//employeeList.stream().limit(2).forEach(System.out::println);
 		//employeeList.stream().forEach(System.out::println);
 		
-		employeeList.stream().filter(emp -> emp.getAge()>30).forEach(System.out::println);
+		employeeList.forEach(System.out::println);
 
 	}
 }

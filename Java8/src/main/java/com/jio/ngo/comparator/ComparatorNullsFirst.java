@@ -32,6 +32,8 @@ public class ComparatorNullsFirst {
 		System.out.println("******************");
 		Collections.sort(list,Comparator.nullsLast(Comparator.comparing(User::getAge)));
 		list.stream().forEach(System.out::println);
+		
+		list.stream().sorted(Comparator.comparing(User::getAge).thenComparing(User::getName));
 
 	}
 }
