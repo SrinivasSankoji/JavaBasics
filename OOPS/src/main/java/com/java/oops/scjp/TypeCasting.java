@@ -1,6 +1,6 @@
 package com.java.oops.scjp;
 
-public class TypeCastingDemo {
+public class TypeCasting {
 
 	public static void main(String[] args) {
 		Object object=new String("durga");

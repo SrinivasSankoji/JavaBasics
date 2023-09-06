@@ -13,7 +13,7 @@ public class PrimitiveSort {
 		int[] intArray= {5,9,1,10};
 		Arrays.sort(intArray);
 		//System.out.println(Arrays.toString(intArray));
-		//Arrays.stream(intArray).forEach(System.out::println);
+		//Arrays.stream(intArray).sorted().forEach(System.out::println);
 		
 		String[] strArray= {"X", "P", "M", "O", "W"};
 		Arrays.sort(strArray);
@@ -27,7 +27,7 @@ public class PrimitiveSort {
         strList.add("Z");
         strList.add("E");
         Collections.sort(strList,Comparator.reverseOrder());
-        strList.stream().forEach(System.out::println);
+        strList.stream().sorted(Comparator.naturalOrder()).forEach(System.out::println);
         
         
 	}

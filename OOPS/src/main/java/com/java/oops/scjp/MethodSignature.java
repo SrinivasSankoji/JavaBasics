@@ -1,6 +1,6 @@
 package com.java.oops.scjp;
 
-public class MethodSignatureDemo {
+public class MethodSignature {
 
 	public void m1(int i)
 	{
@@ -12,7 +12,7 @@ public class MethodSignatureDemo {
 		System.out.println("Integer Value is "+i + "and Double Value is "+d );
 	}
 	public static void main(String[] args) {
-		MethodSignatureDemo demo =new MethodSignatureDemo();
+		MethodSignature demo =new MethodSignature();
 		demo.m1(5);
 		demo.m1(36.0,5);
 		

@@ -11,7 +11,7 @@ public class DefaultImpl implements DefaultInterface,StaticInterface{
 
 	@Override
 	public void defaultM1() {
-		System.out.println("Calling abstract Method");
+		System.out.println("Calling abstract Method");//NOSONAR
 	}
 
 	@Override

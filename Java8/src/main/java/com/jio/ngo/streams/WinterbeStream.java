@@ -27,9 +27,7 @@ public class WinterbeStream {
 		findEvenNumbers();
 	}
 
-	/**
-	 * Way of creating Stream using stream()
-	 */
+	/** Creating Stream using stream() */
 	private static void exampleOne() {
 		System.out.println("Example One --> Way of creating Stream using stream() --> Start ");
 		List<String> myList = Arrays.asList("a1", "a2", "b1", "c2", "c1");
@@ -37,45 +35,37 @@ public class WinterbeStream {
 		System.out.println("Example One --> Way of creating Stream using stream() --> End ");
 	}
 
-	/**
-	 * Way of creating Stream using stream()
-	 */
+	/** Creating Stream using stream() */
 	private static void exampleTwo() {
 		System.out.println("Example Two --> Way of creating Stream using stream() --> Start ");
 		Arrays.asList("a1", "a2", "a3").stream().findFirst().ifPresent(System.out::println);
 		System.out.println("Example Two --> Way of creating Stream using stream() --> End ");
 	}
 
-	/**
-	 * Way of creating Stream using Stream.of
-	 */
+	/** Creating Stream using Stream.of */
 	private static void exampleThree() {
 		System.out.println("Example Three --> Way of creating Stream using Stream.of() --> Start ");
 		Stream.of("a1", "a2", "a3").findFirst().ifPresent(System.out::println);
 		System.out.println("Example Three --> Way of creating Stream using Stream.of() --> End ");
 	}
 
-	/**
-	 * Way of creating IntStream
-	 */
+	/** Creating Stream using IntStream */
 	private static void exampleFour() {
 		System.out.println("Example Four --> Way of creating IntStream --> Start ");
 		IntStream.range(1, 4).forEach(System.out::println);
 		System.out.println("Example Four --> Way of creating IntStream --> End ");
 	}
 
-	/**
-	 * Way of creating Stream using Arrays.stream and Average of the Integer
-	 */
+	/** Creating Stream using Arrays.stream and Average of the Integer */
 	private static void exampleFive() {
 		System.out.println("Example Five --> Way of creating using Arrays.stream --> Start ");
 		Arrays.stream(new int[] { 1, 2, 3 }).map(n -> 2 * n + 1).average().ifPresent(System.out::println);
 		System.out.println("Example Five --> Way of creating using Arrays.stream --> End ");
 	}
-	
+
 	private static void findEvenNumbers() {
 		System.out.println("Example Five --> Way of creating using Arrays.stream --> Start ");
-		Arrays.stream(new int[] { 1, 2, 3 }).filter(n -> n%2==0).forEach(System.out::println);
+		Arrays.stream(new int[] { 1, 2, 3 }).filter(n -> n % 2 == 0).forEach(System.out::println);
 	}
 
 	/**
@@ -136,7 +126,8 @@ public class WinterbeStream {
 	 */
 	private static void exampleEleven() {
 		System.out.println("Example Eleven --> Order With Match --> Start ");
-		Stream.of("a1", "b2", "c3", "d4").peek(System.out::println).map(String::toUpperCase).anyMatch(s -> s.startsWith("B"));
+		Stream.of("a1", "b2", "c3", "d4").peek(System.out::println).map(String::toUpperCase)
+				.anyMatch(s -> s.startsWith("B"));
 		System.out.println("Example Eleven --> Order With Match --> End ");
 	}
 
@@ -147,7 +138,8 @@ public class WinterbeStream {
 		System.out.println("Example Twelve --> Stream Cannot Be Reused --> Start ");
 		Stream<String> stream = Stream.of("a1", "b2", "c3", "d4").filter(s -> s.startsWith("a"));
 		stream.anyMatch(s -> true);
-		//stream.noneMatch(s -> true);//Streams cannot be reused and throws IllegalStateException stream has already been operated upon or closed
+		// stream.noneMatch(s -> true);//Streams cannot be reused and throws
+		// IllegalStateException stream has already been operated upon or closed
 		System.out.println("Example Twelve --> Stream Cannot Be Reused--> End ");
 	}
 
@@ -173,24 +165,24 @@ public class WinterbeStream {
 		});
 		System.out.println("Example Thirteen --> Stream Supplier With get --> End ");
 	}
-	
+
 	/**
-	 * Creating Stream using generate() to generate the Random Numbers
-	 * generate() generates the Infinite Streams
+	 * Creating Stream using generate() to generate the Random Numbers generate()
+	 * generates the Infinite Streams
 	 */
 	private static void exampleFourteen() {
-		Stream<Double> generate=Stream.generate(Math::random).limit(10);
-		Double[] strArray=generate.toArray(Double[]::new);
+		Stream<Double> generate = Stream.generate(Math::random).limit(10);
+		Double[] strArray = generate.toArray(Double[]::new);
 		System.out.println(Arrays.toString(strArray));
 	}
-	
+
 	/**
-	 * Creating Streams using iterate().
-	 * iterate() can be used to create the Infinite Streams
+	 * Creating Streams using iterate(). iterate() can be used to create the
+	 * Infinite Streams
 	 */
 	private static void exampleFifteen() {
-		Stream<Integer> intStream=Stream.iterate(0, n -> n+1).limit(10);
-		Integer[] intArray=intStream.toArray(Integer[]::new);
+		Stream<Integer> intStream = Stream.iterate(0, n -> n + 1).limit(10);
+		Integer[] intArray = intStream.toArray(Integer[]::new);
 		System.out.println(Arrays.toString(intArray));
 	}
 }

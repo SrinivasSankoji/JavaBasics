@@ -1,16 +1,15 @@
 package com.java.oops.scjp;
 
-public class OverridingDemo {
-
+public class Overriding {
 	public static void main(String[] args) {
 
-		ParentDemo parentDemo=new ParentDemo();
+		ParentOverriding parentDemo=new ParentOverriding();
 		parentDemo.marriage();//Arranged Marriage
 		
-		ChildDemo childDemo=new ChildDemo();
+		ChildOverriding childDemo=new ChildOverriding();
 		childDemo.marriage();//Love Marriage
 		
-		ParentDemo parentChild=new ChildDemo();
+		ParentOverriding parentChild=new ChildOverriding();
 		parentChild.marriage();//Love Marriage
 		
 	}

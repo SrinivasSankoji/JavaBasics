@@ -1,6 +1,6 @@
 package com.java.oops.scjp;
 
-public class VarargDemo {
+public class Vararg {
 
 	public static void m1(int... x)
 	{

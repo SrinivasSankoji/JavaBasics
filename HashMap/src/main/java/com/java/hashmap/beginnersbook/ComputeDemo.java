@@ -12,7 +12,7 @@ public class ComputeDemo {
 		map.compute("One", (key,value)-> value=value+" Chary");
 		map.compute("Two", (key,value)-> value=value+" Chary");
 		
-		System.out.println(map);
+		System.out.println(map); //{One=Bhaumik Chary, Two=Aadvik Chary}
 		
 		/**
 		 * Compute to sum the Values
@@ -23,7 +23,7 @@ public class ComputeDemo {
 		
 		map1.compute("One", (key,value) -> (value == null) ? 1 : value + value);
 		
-		System.out.println(map1);
+		System.out.println(map1); //{One=30, Two=23}
 	}
 
 }

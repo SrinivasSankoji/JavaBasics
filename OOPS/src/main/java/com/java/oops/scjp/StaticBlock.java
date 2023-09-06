@@ -1,6 +1,6 @@
 package com.java.oops.scjp;
 
-public class StaticBlockDemo {
+public class StaticBlock {
 	
 	String name;
 	int[] i;
@@ -11,8 +11,8 @@ public class StaticBlockDemo {
 		name="Bhaumik Sankoji";
 	}
 	public static void main(String[] args) {
-		StaticBlockDemo  staticBlockDemo=new StaticBlockDemo();
-		System.out.println(staticBlockDemo.i);
-		System.out.println(staticBlockDemo.name);
+		StaticBlock staticBlock=new StaticBlock();
+		System.out.println(staticBlock.i);
+		System.out.println(staticBlock.name);
 	}
 }
