@@ -14,6 +14,7 @@ public class WinterbeReduce {
 		concatNames();
 	}
 
+	/* reduce() to get the Person with the highest age */
 	private static void reduceOne() {
 		List<Person> persons = Arrays.asList(new Person("Max", null, 18), new Person("Peter", null, 23),
 				new Person("Pamela", null, 23), new Person("David", null, 12));
@@ -38,6 +39,7 @@ public class WinterbeReduce {
 		System.out.println(ageSum);
 	}
 
+	/* reduce() to concat the String */
 	private static void concatNames() {
 		List<String> names = Arrays.asList("Srinivas", "Sankoji");
 		names.stream().reduce((fName, lName) -> fName + " " + lName).ifPresent(System.out::println);

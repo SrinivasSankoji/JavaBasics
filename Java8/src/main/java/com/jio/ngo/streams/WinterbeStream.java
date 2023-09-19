@@ -132,7 +132,7 @@ public class WinterbeStream {
 	}
 
 	/**
-	 * Stream Cannot Be Reused
+	 * Stream Cannot Be reused
 	 */
 	private static void exampleTwelve() {
 		System.out.println("Example Twelve --> Stream Cannot Be Reused --> Start ");
@@ -167,7 +167,7 @@ public class WinterbeStream {
 	}
 
 	/**
-	 * Creating Stream using generate() to generate the Random Numbers generate()
+	 * Create Stream using generate() to generate the Random Numbers generate()
 	 * generates the Infinite Streams
 	 */
 	private static void exampleFourteen() {

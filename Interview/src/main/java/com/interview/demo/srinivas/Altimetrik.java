@@ -14,10 +14,10 @@ public class Altimetrik {
 
 	public static <E> void main(String[] args) {
 		// Array of (12 ,13 -2876 , 52 , -111 )
-		// Java program to list highest valued first 2 numbers.
+		// Java program to list the highest valued first 2 numbers.
 		int[] intArray = { 12, 13, -2876, 52, -111 };
 		Arrays.sort(intArray);
-		// System.out.println(Arrays.toString(intArray));
+		System.out.println(Arrays.toString(intArray));
 
 		List<Integer> result = Arrays.stream(intArray).boxed().sorted(Comparator.reverseOrder()).limit(2)
 				.collect(Collectors.toList());

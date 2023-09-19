@@ -1,8 +1,8 @@
 package com.java.oops.scjp;
 
-public class Test {
+public class CustomMain {
 	static String name="Bhaumik";
 	public static void main(String[] args) {
-		System.out.println(Test.name.length());
+		System.out.println(CustomMain.name.length());
 	}
 }

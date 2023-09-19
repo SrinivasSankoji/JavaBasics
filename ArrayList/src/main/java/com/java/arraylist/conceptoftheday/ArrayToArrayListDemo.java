@@ -9,17 +9,17 @@ import java.util.stream.Collectors;
 public class ArrayToArrayListDemo {
 
 	public static void main(String[] args) {
-		String[] array=new String[] {"ANDROID", "JSP", "JAVA", "STRUTS", "HADOOP", "JSF"};
+		String[] array={"ANDROID", "JSP", "JAVA", "STRUTS", "HADOOP", "JSF"};
 		ArrayList<String> methodOne=new ArrayList<>(Arrays.asList(array));
 		System.out.println(methodOne);
 		
 		ArrayList<String> methodTwo=new ArrayList<>();
 		Collections.addAll(methodTwo, array);
 		
-		//ArrayList addAll()
+		/* ArrayList addAll() */
 		methodTwo.addAll(Arrays.asList(array));
-		
-		//Streams from Java8
+
+		/* Streams from Java8 */
 		List<String> methodFour=Arrays.stream(array).collect(Collectors.toList());
 		System.out.println(methodFour);
 		

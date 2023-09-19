@@ -18,7 +18,7 @@ public class ConcretePageReduce {
 	private static void reduceWithIdentityBinaryOperator() {
 		int sum=0;
 		int[] intArray= {23,43,56,97,32};
-		sum=Arrays.stream(intArray).reduce(100,Integer::sum);
+		sum=Arrays.stream(intArray).reduce(0,Integer::sum);
 		System.out.println(sum);
 	}
 
