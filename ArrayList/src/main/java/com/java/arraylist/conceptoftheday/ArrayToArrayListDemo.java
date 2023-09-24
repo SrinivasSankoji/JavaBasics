@@ -10,19 +10,21 @@ public class ArrayToArrayListDemo {
 
 	public static void main(String[] args) {
 		String[] array={"ANDROID", "JSP", "JAVA", "STRUTS", "HADOOP", "JSF"};
+		/* Convert String Array to ArrayList */
 		ArrayList<String> methodOne=new ArrayList<>(Arrays.asList(array));
 		System.out.println(methodOne);
-		
+
+		/* Convert String Array to ArrayList using Collections */
 		ArrayList<String> methodTwo=new ArrayList<>();
 		Collections.addAll(methodTwo, array);
-		
 		/* ArrayList addAll() */
 		methodTwo.addAll(Arrays.asList(array));
 
-		/* Streams from Java8 */
+		/* Convert String Array to ArrayList using Streams */
 		List<String> methodFour=Arrays.stream(array).collect(Collectors.toList());
 		System.out.println(methodFour);
-		
+
+		/* Convert ArrayList to Array */
 		Object[] objectArray=methodFour.toArray();
 		System.out.println(objectArray.length);
 		

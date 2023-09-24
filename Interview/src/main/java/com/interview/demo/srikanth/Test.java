@@ -2,6 +2,7 @@ package com.interview.demo.srikanth;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Test {
@@ -17,6 +18,8 @@ public class Test {
 		System.out.println(result);
 		
 		//select d.dept,max(e.sal) from department d join employee e where department d where d.eid=e.eid;
+
+		String input = "count each character in string data";
 	}
 
 }

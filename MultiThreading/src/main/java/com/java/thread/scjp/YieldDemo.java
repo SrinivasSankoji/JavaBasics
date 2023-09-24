@@ -1,6 +1,6 @@
 package com.java.thread.scjp;
 
-public class ThreadYeildDemo extends Thread{
+public class YieldDemo extends Thread{
 	@Override
 	public void run() {
 		for (int i = 0; i < 5; i++) {
@@ -9,8 +9,8 @@ public class ThreadYeildDemo extends Thread{
 		}
 	}
 	public static void main(String[] args) {
-		ThreadYeildDemo yeildDemo=new ThreadYeildDemo();
-		yeildDemo.start();
+		YieldDemo yieldDemo=new YieldDemo();
+		yieldDemo.start();
 		for (int i = 6; i < 10; i++) {
 			System.out.println(i);
 		}
