@@ -1,5 +1,6 @@
-package com.example.demo.behavioral.chainofresponsibility;
+package com.example.demo.behavioral.chainofresponsibility.skilledcodermedium;
 
+import com.example.demo.behavioral.chainofresponsibility.skilledcodermedium.ApprovalProcess;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -8,7 +9,6 @@ public class TeamLead implements ApprovalProcess {
 
     @Override
     public void next(ApprovalProcess approvalProcess) {
-        this.approvalProcess = approvalProcess;
     }
 
     @Override

@@ -1,15 +1,13 @@
-package com.example.demo.behavioral.chainofresponsibility;
+package com.example.demo.behavioral.chainofresponsibility.skilledcodermedium;
 
+import com.example.demo.behavioral.chainofresponsibility.skilledcodermedium.ApprovalProcess;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class CEO implements ApprovalProcess {
 
-    private ApprovalProcess approvalProcess;
-
     @Override
     public void next(ApprovalProcess handler) {
-        this.approvalProcess = approvalProcess;
     }
 
     @Override
