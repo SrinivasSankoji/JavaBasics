@@ -3,23 +3,23 @@ package com.java.string.scientecheasy;
 import lombok.Getter;
 
 @Getter
-public final class ImmutableStudent {
+public final class Student {
 
     private final String name;
     private final int rollNo;
 
-    private final MutableSchool school; // Added to break the Immutable Class
+    private final School school; // Added to break the Immutable Class
 
-    public ImmutableStudent(String name, int rollNo, MutableSchool school) {
+    public Student(String name, int rollNo, School school) {
         this.name = name;
         this.rollNo = rollNo;
-        this.school = new MutableSchool();
+        this.school = new School();
         this.school.setSchoolName(school.getSchoolName());
     }
     public static void main(String[] args) {
-        MutableSchool school = new MutableSchool();
+        School school = new School();
         school.setSchoolName("Suprabhat Model High School");
-        ImmutableStudent st = new ImmutableStudent("Bhaumik", 7, school);
+        Student st = new Student("Bhaumik", 7, school);
         String name = st.getName();
         int rollNo = st.getRollNo();
         System.out.println("Name: " +name);

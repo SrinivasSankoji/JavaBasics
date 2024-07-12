@@ -5,6 +5,7 @@ public class CloneableSingleton implements Cloneable {
 	private CloneableSingleton() {
 	}
 
+	/* Bill pugh Singleton Implementation */
 	private static class CloneableSingletonHelper {
 		private static final CloneableSingleton INSTANCE = new CloneableSingleton();
 	}
@@ -14,8 +15,7 @@ public class CloneableSingleton implements Cloneable {
 	}
 
 	protected Object clone() throws CloneNotSupportedException {
-		//CloneableSingleton cloneableSingleton = (CloneableSingleton) super.clone();
-		//return cloneableSingleton;
+		//return super.clone();
 		return getInstance();
 	}
 }

@@ -8,12 +8,14 @@ public class Student {
     private String lastName;
     private int age;
 
+    /* Argument Constructor */
     public Student(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
     }
 
+    /* Copy Constructor */
     public Student(Student student) {
         this.firstName = student.firstName;
         this.lastName = student.lastName;
@@ -40,10 +42,12 @@ public class Student {
     }
 
     public static void main(String[] args) {
+        /* call to argument constructor */
         Student s1=new Student("Srinivas","Chary",37);
+        /* call to copy constructor */
         Student s2=new Student(s1);
-        System.out.println(s1==s2);
-        System.out.println(s1.equals(s2));
+        System.out.println(s1==s2); //false
+        System.out.println(s1.equals(s2)); //true
 
     }
 

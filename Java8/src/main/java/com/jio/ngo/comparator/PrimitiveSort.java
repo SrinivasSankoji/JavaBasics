@@ -18,7 +18,7 @@ public class PrimitiveSort {
 		String[] strArray= {"X", "P", "M", "O", "W"};
 		Arrays.sort(strArray);
 		System.out.println(Arrays.toString(strArray));
-		Arrays.stream(strArray).forEach(System.out::println);
+		Arrays.stream(strArray).sorted().forEach(System.out::println);
 		
 		List<String> strList=new ArrayList<String>();
 		strList.add("A");

@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class MutableSchool {
+public class School {
     private String schoolName;
 }

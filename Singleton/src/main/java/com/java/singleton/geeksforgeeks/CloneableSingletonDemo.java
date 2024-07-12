@@ -8,5 +8,4 @@ public class CloneableSingletonDemo {
 		System.out.println(instanceOne.hashCode());
 		System.out.println(instanceTwo.hashCode());
 	}
-
 }
