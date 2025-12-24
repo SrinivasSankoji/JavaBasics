@@ -13,12 +13,14 @@ import com.jio.ngo.winterbe.model.Student;
 
 public class WinterbeCollect {
 	public static void main(String[] args) {
-		basicCollect();
-		summarizingInt();
+		/*basicCollect();
+
 		joining();
-		averagingInt();
-		collectorMap();
-		groupingBy();
+
+		collectorMap();*/
+		//averagingInt();
+		summarizingInt();
+		//groupingBy();
 	}
 
 	/**
@@ -41,7 +43,7 @@ public class WinterbeCollect {
 		List<Integer> integerArray = Arrays.asList(25, 36, 81);
 		IntSummaryStatistics statistics = integerArray.stream()
 				.collect(Collectors.summarizingInt(number -> number + number));
-		System.out.println(statistics.getSum());
+		System.out.println(statistics);
 		System.out.println("summarizingInt --> End ");
 
 	}
@@ -64,7 +66,7 @@ public class WinterbeCollect {
 	private static void averagingInt() {
 		System.out.println("averagingInt --> Start ");
 		List<Integer> list = Arrays.asList(1, 2, 3, 4);
-		Double average = list.stream().collect(Collectors.averagingInt(number -> number * 2));
+		Double average = list.stream().collect(Collectors.averagingInt(number -> number * 1));
 		System.out.println("Average is "+average);
 		System.out.println("averagingInt --> End ");
 	}
@@ -101,8 +103,8 @@ public class WinterbeCollect {
 		
 		List<Student> results = result.entrySet().stream().map(Map.Entry::getValue).flatMap(List::stream)
 				.collect(Collectors.toList());
-		//results.forEach(s -> System.out.println(s));
-		System.out.println(classCount);
+		results.forEach(s -> System.out.println(s));
+		System.out.println(result);
 		System.out.println("groupingBy --> End ");
 	}
 
