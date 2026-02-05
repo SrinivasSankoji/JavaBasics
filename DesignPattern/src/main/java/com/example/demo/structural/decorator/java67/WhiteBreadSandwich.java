@@ -2,9 +2,10 @@ package com.example.demo.structural.decorator.java67;
 
 import java.math.BigDecimal;
 
+/* Plain Sandwich */
 public class WhiteBreadSandwich extends Sandwich {
-    public WhiteBreadSandwich(String desc) {
-        description = desc;
+    public WhiteBreadSandwich(String description) {
+        description = description;
     }
     @Override
     public BigDecimal price() {

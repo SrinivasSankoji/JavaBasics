@@ -2,14 +2,14 @@ package com.example.demo.structural.decorator.java67;
 
 import java.math.BigDecimal;
 
-public class CheeseDecorator extends SandwichDecorator {
+public class CheeseSandwich extends SandwichDecorator {
     Sandwich sandwich;
-    public CheeseDecorator(Sandwich sandwich) {
+    public CheeseSandwich(Sandwich sandwich) {
         this.sandwich = sandwich;
     }
     @Override
     public String getDescription() {
-        return sandwich.getDescription()+ ", Cheese";
+        return sandwich.getDescription()+ " along with Cheese";
     }
     @Override
     public BigDecimal price() {
